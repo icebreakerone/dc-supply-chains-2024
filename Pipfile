@@ -1,0 +1,14 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+cryptography = "*"
+asn1crypto = "*"
+ib1-provenance = {git = "git+https://github.com/icebreakerone/provenance.git"}
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"
