@@ -178,7 +178,7 @@ if __name__ == "__main__":
             "to": "https://directory.core.trust.ib1.org/member/927625",
             "standard": "https://registry.core.trust.ib1.org/scheme/supply/standard/supply-data/2024-12-05",
             "licence": "https://registry.core.trust.ib1.org/scheme/supply/licence/supply-data/2024-12-05",
-            "service": "https://api.emmissions4u.example.com/emission-report/23",
+            "service": "https://api.nitrofertiliser.example.com/supply",
             "path": "/supply",
             "parameters": {
                 "invoiceNumber": "F2928-282847"
@@ -188,7 +188,6 @@ if __name__ == "__main__":
         }
     )
 
-    # CAP signs the steps
     manufacturer_record_signed = manufacturer_record.sign(signers['7-nitrogen-fertiliser-products'])
     # Get encoded data for inclusion in data response
     manufacturer_data_attachment = manufacturer_record_signed.encoded()
@@ -205,12 +204,58 @@ if __name__ == "__main__":
             "transfer": manufacturer_transfer_step_id
         }
     )
+    wholesaler_permission_id = wholesaler_record.add_step(
+        {
+            "type": "permission",
+            "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+            "timestamp": "2024-10-21T09:09:10Z",
+            "account": "hofgGwfwyZIhmM",
+            "allows": {
+                "licences": [
+                    "https://registry.core.trust.ib1.org/scheme/supply/licence/supply-data/2024-12-05"
+                ]
+            },
+            "expires": "2025-10-21T09:09:10Z"       # 1 year
+        }
+    )
+    wholesaler_transfer_id = wholesaler_record.add_step(
+        {
+            "type": "transfer",
+            "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+            "of": wholesaler_receipt_id,
+            "to": "https://directory.core.trust.ib1.org/member/143252",
+            "standard": "https://registry.core.trust.ib1.org/scheme/supply/standard/supply-data/2024-12-05",
+            "licence": "https://registry.core.trust.ib1.org/scheme/supply/licence/supply-data/2024-12-05",
+            "service": "https://api.agwhole.example.com/supplies/v2",
+            "path": "/supply",
+            "parameters": {
+                "invoiceNumber": "876256237"
+            },
+            "permissions": [wholesaler_permission_id],
+            "transaction": "00FA5C42-DDBB-444C-B1CE-7B45C0DA642F"
+        }
+    )
 
-    # Bank signs the steps
     wholesaler_record_signed = wholesaler_record.sign(signers["8-agricultural-wholesale-supplies"])
+    wholesaler_data_attachment = wholesaler_record_signed.encoded()
+
+    # -----------------------------------------------------------------------
+    # ===== Farm management system
+    farm_management_system_record = Record(TRUST_FRAMEWORK_URL, wholesaler_data_attachment)
+
+
+    farm_management_system_receipt_id = farm_management_system_record.add_step(
+        {
+            "type": "receipt",
+            "transfer": wholesaler_transfer_id
+        }
+    )
+
+    farm_management_system_record_signed = farm_management_system_record.sign(signers["9-precise-farm-automation-co"])
+
 
     # ===== Final record after all the the steps have been added
-    final_record = wholesaler_record_signed
+    final_record = farm_management_system_record_signed
 
     # Print records
     print("----- Record (encoded for transfer) -----")
