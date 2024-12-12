@@ -305,10 +305,77 @@ if __name__ == "__main__":
     farm_management_system_data_attachment = farm_management_system_record_signed.encoded()
 
     # -----------------------------------------------------------------------
-    # ===== Farm management system
+    # ===== Accounting software getting data from the bank
+
+    accountants_record = Record(TRUST_FRAMEWORK_URL)
+
+    accountants_permission_id = accountants_record.add_step(
+        {
+            "type": "permission",
+            "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+            "timestamp": "2024-09-20T12:16:11Z",    # granted in past; must match audit trail
+            "account": "/yl4Y/aV6b80fo5cnmuDDByfuEA=",
+            "allows": {
+                "licences": [
+                    "https://registry.core.trust.ib1.org/scheme/supply/licence/metered-supply-data/2024-12-05"
+                ]
+            },
+            "expires": "2025-09-20T12:16:11Z"       # 1 year
+        }
+    )
+    # - Origin step for the smart meter data
+    accountants_origin_id = accountants_record.add_step(
+        {
+            "type": "origin",
+            "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+            "sourceType": "https://registry.core.trust.ib1.org/scheme/supply/source-type/OpenBanking",
+            "origin": "https://highstreetbank.example.com/",
+            "originLicence": "https://www.openbanking.org.uk/regulatory/",
+            "external": True,
+            "permissions": [
+                accountants_permission_id
+            ],
+            "supply:scheme": {
+                "period": {
+                    "from": "2024-08-01Z",
+                    "to": "2024-09-01Z"
+                }
+            },
+            "supply:assurance": {
+                "missingData": "https://registry.core.trust.ib1.org/scheme/supply/assurance/missing-data/Complete",
+            }
+        }
+    )
+    # - Transfer step to send it to the platfrom
+    accountants_transfer_step_id = accountants_record.add_step(
+        {
+            "type": "transfer",
+            "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+            "of": accountants_origin_id,
+            "to": "https://directory.core.trust.ib1.org/member/293482",
+            "standard": "https://registry.core.trust.ib1.org/scheme/supply/standard/metered-supply-data/2024-12-05",
+            "licence": "https://registry.core.trust.ib1.org/scheme/supply/licence/metered-supply-data/2024-12-05",
+            "service": "https://api.industrialmetering.example.com/meter-readings/0",
+            "path": "/readings",
+            "parameters": {
+                "from": "2024-08-01Z",
+                "to": "2024-09-01Z"
+            },
+            "permissions": [accountants_permission_id],
+            "transaction": "C25D0B85-B7C4-4543-B058-7DA57B8D9A24",
+        }
+    )
+    # Metering provider signs the steps
+    accountants_record_signed = accountants_record.sign(signers['10-rosemary-accountancy-software'])
+    # Get encoded data for inclusion in data response
+    accountants_data_attachment = accountants_record_signed.encoded()
+
+    # -----------------------------------------------------------------------
+    # ===== Sustainability accounting platform
 
     sustainability_accounting_platform_record = Record(TRUST_FRAMEWORK_URL, farm_management_system_data_attachment)
-    
+    sustainability_accounting_platform_record.add_record(Record(TRUST_FRAMEWORK_URL, accountants_data_attachment))
+
     sustainability_accounting_platform_receipt_id = sustainability_accounting_platform_record.add_step(
         {
             "type": "receipt",
@@ -339,7 +406,8 @@ if __name__ == "__main__":
             "type": "process",
             "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
             "inputs": [
-                sustainability_accounting_platform_receipt_id
+                sustainability_accounting_platform_receipt_id,
+                accountants_transfer_step_id
             ],
             "process": "https://registry.core.trust.ib1.org/scheme/supply/process/sustainability-report/2024-12-05",
             "permissions": [sustainability_accounting_platform_permission_id],
