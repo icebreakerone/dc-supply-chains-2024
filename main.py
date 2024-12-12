@@ -56,7 +56,7 @@ if __name__ == "__main__":
             "expires": "2025-09-20T12:16:11Z"       # 1 year
         }
     )
-    # - Origin step for the smart meter data
+    # - Origin step for the meter data
     origin_id = metering_record.add_step(
         {
             "type": "origin",
@@ -76,7 +76,7 @@ if __name__ == "__main__":
             }
         }
     )
-    # - Transfer step to send it to the CAP
+    # - Transfer step
     metering_transfer_step_id = metering_record.add_step(
         {
             "type": "transfer",
@@ -101,18 +101,18 @@ if __name__ == "__main__":
     metering_data_attachment = metering_record_signed.encoded()
 
     # -----------------------------------------------------------------------
-    # ===== CAP retrieves the data from the EDP, who includes a provenance record in the response
+    # ===== Manufacturer
     manufacturer_record = Record(TRUST_FRAMEWORK_URL, metering_data_attachment)
-    # - Verify the signatures on the record
+
     manufacturer_record.verify(certificate_provider)
-    # - Add a receipt step
+
     manufacturer_receipt_id = manufacturer_record.add_step(
         {
             "type": "receipt",
             "transfer": metering_transfer_step_id
         }
     )
-    # - Permission step to record consent to processing and future transfer
+
     manufacturer_permission_id = manufacturer_record.add_step(
         {
             "type": "permission",
@@ -130,7 +130,7 @@ if __name__ == "__main__":
             "expires": "2025-10-21T09:09:10Z"       # 1 year
         }
     )
-    # - Add an origin step for grid intensity data
+
     manufacturer_batch_origin_id = manufacturer_record.add_step(
         {
             "type": "origin",
@@ -151,14 +151,36 @@ if __name__ == "__main__":
             }
         }
     )
-    # - Add a process step to combine the data from the EDP and the grid intensity API into the report
+
+    manufacturer_batch_origin2_id = manufacturer_record.add_step(
+        {
+            "type": "origin",
+            "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+            "sourceType": "https://registry.core.trust.ib1.org/scheme/supply/source-type/Meter",
+            "origin": "https://nitrofertiliser.example.com/",
+            "external": False,
+            "supply:scheme": {
+                "meteringPeriod": {
+                    "from": "2024-08-01Z",
+                    "to": "2024-09-01Z"
+                }
+            },
+            "supply:assurance": {
+                "missingData": "https://registry.core.trust.ib1.org/scheme/supply/assurance/missing-data/Complete",
+                "materialQuantity": "https://registry.core.trust.ib1.org/scheme/supply/assurance/material-quantity/Measured"
+            }
+        }
+    )
+
+    # - Add a process step to combine the data from the meters and grid intensity
     manufacturer_processing_id = manufacturer_record.add_step(
         {
             "type": "process",
             "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
             "inputs": [
                 manufacturer_receipt_id,
-                manufacturer_batch_origin_id
+                manufacturer_batch_origin_id,
+                manufacturer_batch_origin2_id
             ],
             "process": "https://registry.core.trust.ib1.org/scheme/supply/process/manufacture/2024-12-05",
             "permissions": [manufacturer_permission_id],
@@ -168,7 +190,7 @@ if __name__ == "__main__":
             }
         }
     )
-    # - Add a transfer step to send it to the wholesaler
+
     manufacturer_transfer_step_id = manufacturer_record.add_step(
         {
             "type": "transfer",
@@ -188,21 +210,22 @@ if __name__ == "__main__":
     )
 
     manufacturer_record_signed = manufacturer_record.sign(signers['7-nitrogen-fertiliser-products'])
-    # Get encoded data for inclusion in data response
+
     manufacturer_data_attachment = manufacturer_record_signed.encoded()
 
     # -----------------------------------------------------------------------
     # ===== Wholesaler
     wholesaler_record = Record(TRUST_FRAMEWORK_URL, manufacturer_data_attachment)
-    # - Verify the signatures on the record
+
     wholesaler_record.verify(certificate_provider)
-    # - Add a receipt step
+
     wholesaler_receipt_id = wholesaler_record.add_step(
         {
             "type": "receipt",
             "transfer": manufacturer_transfer_step_id
         }
     )
+
     wholesaler_permission_id = wholesaler_record.add_step(
         {
             "type": "permission",
@@ -242,6 +265,7 @@ if __name__ == "__main__":
     # ===== Farm management system
     farm_management_system_record = Record(TRUST_FRAMEWORK_URL, wholesaler_data_attachment)
 
+    farm_management_system_record.verify(certificate_provider)
 
     farm_management_system_receipt_id = farm_management_system_record.add_step(
         {
@@ -255,7 +279,7 @@ if __name__ == "__main__":
             "type": "permission",
             "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
             "timestamp": "2024-10-21T09:09:10Z",
-            "account": "dbd16978-a0a642d9aa2d95318b50e605",
+            "account": "AxZNO1PfLe0JUSZqz6sJbdmbV4yAWQ",
             "allows": {
                 "licences": [
                     "https://registry.core.trust.ib1.org/scheme/supply/licence/supply-data/2024-12-05"
@@ -278,7 +302,8 @@ if __name__ == "__main__":
             "process": "https://registry.core.trust.ib1.org/scheme/supply/process/farm-management/2024-12-05",
             "permissions": [farm_management_system_permission_id],
             "supply:assurance": {
-                "missingData": "https://registry.core.trust.ib1.org/scheme/supply/assurance/missing-data/Complete"
+                "missingData": "https://registry.core.trust.ib1.org/scheme/supply/assurance/missing-data/Complete",
+                "audit": "https://registry.core.trust.ib1.org/scheme/supply/audit-standard/ABC1000"
             }
         }
     )
@@ -291,10 +316,11 @@ if __name__ == "__main__":
             "to": "https://directory.core.trust.ib1.org/member/183426",
             "standard": "https://registry.core.trust.ib1.org/scheme/supply/standard/supply-data/2024-12-05",
             "licence": "https://registry.core.trust.ib1.org/scheme/supply/licence/supply-data/2024-12-05",
-            "service": "https://api.agwhole.example.com/supplies/v2",
+            "service": "https://api.sustainablefarmmanagement.example.com/supplies/v2",
             "path": "/supply",
             "parameters": {
-                # TODO
+                "from": "2024-07-01Z",
+                "to": "2024-08-01Z"
             },
             "permissions": [farm_management_system_permission_id],
             "transaction": "izusb6BS88WE6PE2o2WV8xgvNsvICUUuwyAOG"
@@ -308,6 +334,8 @@ if __name__ == "__main__":
     # ===== Accounting software getting data from the bank
 
     accountants_record = Record(TRUST_FRAMEWORK_URL)
+
+    accountants_record.verify(certificate_provider)
 
     accountants_permission_id = accountants_record.add_step(
         {
@@ -323,7 +351,7 @@ if __name__ == "__main__":
             "expires": "2025-09-20T12:16:11Z"       # 1 year
         }
     )
-    # - Origin step for the smart meter data
+
     accountants_origin_id = accountants_record.add_step(
         {
             "type": "origin",
@@ -337,8 +365,8 @@ if __name__ == "__main__":
             ],
             "supply:scheme": {
                 "period": {
-                    "from": "2024-08-01Z",
-                    "to": "2024-09-01Z"
+                    "from": "2024-07-01Z",
+                    "to": "2024-08-01Z"
                 }
             },
             "supply:assurance": {
@@ -346,15 +374,15 @@ if __name__ == "__main__":
             }
         }
     )
-    # - Transfer step to send it to the platfrom
+
     accountants_transfer_step_id = accountants_record.add_step(
         {
             "type": "transfer",
             "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
             "of": accountants_origin_id,
             "to": "https://directory.core.trust.ib1.org/member/293482",
-            "standard": "https://registry.core.trust.ib1.org/scheme/supply/standard/metered-supply-data/2024-12-05",
-            "licence": "https://registry.core.trust.ib1.org/scheme/supply/licence/metered-supply-data/2024-12-05",
+            "standard": "https://registry.core.trust.ib1.org/scheme/supply/standard/supply-data/2024-12-05",
+            "licence": "https://registry.core.trust.ib1.org/scheme/supply/licence/supply-data/2024-12-05",
             "service": "https://api.industrialmetering.example.com/meter-readings/0",
             "path": "/readings",
             "parameters": {
@@ -362,18 +390,20 @@ if __name__ == "__main__":
                 "to": "2024-09-01Z"
             },
             "permissions": [accountants_permission_id],
-            "transaction": "C25D0B85-B7C4-4543-B058-7DA57B8D9A24",
+            "transaction": "BEA0ED93-D421-4B54-BE7E-6DE532DA1784",
         }
     )
-    # Metering provider signs the steps
+
     accountants_record_signed = accountants_record.sign(signers['10-rosemary-accountancy-software'])
-    # Get encoded data for inclusion in data response
     accountants_data_attachment = accountants_record_signed.encoded()
 
     # -----------------------------------------------------------------------
     # ===== Sustainability accounting platform
 
     sustainability_accounting_platform_record = Record(TRUST_FRAMEWORK_URL, farm_management_system_data_attachment)
+
+    sustainability_accounting_platform_record.verify(certificate_provider)
+
     sustainability_accounting_platform_record.add_record(Record(TRUST_FRAMEWORK_URL, accountants_data_attachment))
 
     sustainability_accounting_platform_receipt_id = sustainability_accounting_platform_record.add_step(
@@ -391,7 +421,7 @@ if __name__ == "__main__":
             "account": "dbd16978-a0a642d9aa2d95318b50e605",
             "allows": {
                 "licences": [
-                    "https://registry.core.trust.ib1.org/scheme/supply/licence/supply-data/2024-12-05"
+                    "https://registry.core.trust.ib1.org/scheme/supply/licence/sustainability-report/2024-12-05"
                 ],
                 "processes": [
                     "https://registry.core.trust.ib1.org/scheme/supply/process/sustainability-report/2024-12-05"
@@ -423,12 +453,13 @@ if __name__ == "__main__":
             "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
             "of": sustainability_accounting_platform_processing_id,
             "to": "https://directory.core.trust.ib1.org/member/582373",
-            "standard": "https://registry.core.trust.ib1.org/scheme/supply/standard/supply-data/2024-12-05",
-            "licence": "https://registry.core.trust.ib1.org/scheme/supply/licence/supply-data/2024-12-05",
+            "standard": "https://registry.core.trust.ib1.org/scheme/supply/standard/sustainability-report/2024-12-05",
+            "licence": "https://registry.core.trust.ib1.org/scheme/supply/licence/sustainability-report/2024-12-05",
             "service": "https://api.agwhole.example.com/supplies/v2",
             "path": "/supply",
             "parameters": {
-                # TODO
+                "from": "2024-08-01Z",
+                "to": "2024-09-01Z"
             },
             "permissions": [sustainability_accounting_platform_permission_id],
             "transaction": "izusb6BS88WE6PE2o2WV8xgvNsvICUUuwyAOG"
@@ -450,6 +481,8 @@ if __name__ == "__main__":
         }
     )
     bank_record_signed = bank_record.sign(signers["12-green-bank-of-london"])
+
+    # -----------------------------------------------------------------------
 
     # ===== Final record after all the the steps have been added
     final_record = bank_record_signed
