@@ -253,6 +253,9 @@ if __name__ == "__main__":
             "parameters": {
                 "invoiceNumber": "876256237"
             },
+            "supply:assurance": {
+                "tracking": "https://registry.core.trust.ib1.org/scheme/supply/assurance/tracking/SpecificBatch"
+            },
             "permissions": [wholesaler_permission_id],
             "transaction": "00FA5C42-DDBB-444C-B1CE-7B45C0DA642F"
         }
@@ -440,7 +443,8 @@ if __name__ == "__main__":
             "process": "https://registry.core.trust.ib1.org/scheme/supply/process/sustainability-report/2024-12-05",
             "permissions": [sustainability_accounting_platform_permission_id],
             "supply:assurance": {
-                "missingData": "https://registry.core.trust.ib1.org/scheme/supply/assurance/missing-data/Missing"
+                "missingData": "https://registry.core.trust.ib1.org/scheme/supply/assurance/missing-data/Missing",
+                "correlation": "https://registry.core.trust.ib1.org/scheme/supply/assurance/correlation/MoreThanOneDataSource"
             }
         }
     )
