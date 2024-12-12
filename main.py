@@ -251,11 +251,109 @@ if __name__ == "__main__":
         }
     )
 
-    farm_management_system_record_signed = farm_management_system_record.sign(signers["9-precise-farm-automation-co"])
+    farm_management_system_permission_id = farm_management_system_record.add_step(
+        {
+            "type": "permission",
+            "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+            "timestamp": "2024-10-21T09:09:10Z",
+            "account": "dbd16978-a0a642d9aa2d95318b50e605",
+            "allows": {
+                "licences": [
+                    "https://registry.core.trust.ib1.org/scheme/supply/licence/supply-data/2024-12-05"
+                ],
+                "processes": [
+                    "https://registry.core.trust.ib1.org/scheme/supply/process/farm-management/2024-12-05"
+                ]
+            },
+            "expires": "2025-10-21T09:09:10Z"       # 1 year
+        }
+    )
 
+    farm_management_system_processing_id = farm_management_system_record.add_step(
+        {
+            "type": "process",
+            "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+            "inputs": [
+                farm_management_system_receipt_id
+            ],
+            "process": "https://registry.core.trust.ib1.org/scheme/supply/process/farm-management/2024-12-05",
+            "permissions": [farm_management_system_permission_id],
+            "supply:assurance": {
+                "missingData": "https://registry.core.trust.ib1.org/scheme/supply/assurance/missing-data/Complete"
+            }
+        }
+    )
+
+    farm_management_system_transfer_id = farm_management_system_record.add_step(
+        {
+            "type": "transfer",
+            "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+            "of": farm_management_system_processing_id,
+            "to": "https://directory.core.trust.ib1.org/member/183426",
+            "standard": "https://registry.core.trust.ib1.org/scheme/supply/standard/supply-data/2024-12-05",
+            "licence": "https://registry.core.trust.ib1.org/scheme/supply/licence/supply-data/2024-12-05",
+            "service": "https://api.agwhole.example.com/supplies/v2",
+            "path": "/supply",
+            "parameters": {
+                # TODO
+            },
+            "permissions": [farm_management_system_permission_id],
+            "transaction": "izusb6BS88WE6PE2o2WV8xgvNsvICUUuwyAOG"
+        }
+    )
+
+    farm_management_system_record_signed = farm_management_system_record.sign(signers["9-precise-farm-automation-co"])
+    farm_management_system_data_attachment = farm_management_system_record_signed.encoded()
+
+    # -----------------------------------------------------------------------
+    # ===== Farm management system
+
+    sustainability_accounting_platform_record = Record(TRUST_FRAMEWORK_URL, farm_management_system_data_attachment)
+    
+    sustainability_accounting_platform_receipt_id = sustainability_accounting_platform_record.add_step(
+        {
+            "type": "receipt",
+            "transfer": farm_management_system_transfer_id
+        }
+    )
+
+    sustainability_accounting_platform_permission_id = sustainability_accounting_platform_record.add_step(
+        {
+            "type": "permission",
+            "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+            "timestamp": "2024-10-21T09:09:10Z",
+            "account": "dbd16978-a0a642d9aa2d95318b50e605",
+            "allows": {
+                "licences": [
+                    "https://registry.core.trust.ib1.org/scheme/supply/licence/supply-data/2024-12-05"
+                ],
+                "processes": [
+                    "https://registry.core.trust.ib1.org/scheme/supply/process/sustainability-report/2024-12-05"
+                ]
+            },
+            "expires": "2025-10-21T09:09:10Z"       # 1 year
+        }
+    )
+
+    sustainability_accounting_platform_processing_id = sustainability_accounting_platform_record.add_step(
+        {
+            "type": "process",
+            "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+            "inputs": [
+                sustainability_accounting_platform_receipt_id
+            ],
+            "process": "https://registry.core.trust.ib1.org/scheme/supply/process/sustainability-report/2024-12-05",
+            "permissions": [sustainability_accounting_platform_permission_id],
+            "supply:assurance": {
+                "missingData": "https://registry.core.trust.ib1.org/scheme/supply/assurance/missing-data/Missing"
+            }
+        }
+    )
+
+    sustainability_accounting_platform_record_signed = sustainability_accounting_platform_record.sign(signers["12-sustainable-farm-systems"])
 
     # ===== Final record after all the the steps have been added
-    final_record = farm_management_system_record_signed
+    final_record = sustainability_accounting_platform_record_signed
 
     # Print records
     print("----- Record (encoded for transfer) -----")
