@@ -382,9 +382,9 @@ if __name__ == "__main__":
             "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
             "of": accountants_origin_id,
             "to": "https://directory.core.trust.ib1.org/member/293482",
-            "standard": "https://registry.core.trust.ib1.org/scheme/supply/standard/supply-data/2024-12-05",
-            "licence": "https://registry.core.trust.ib1.org/scheme/supply/licence/supply-data/2024-12-05",
-            "service": "https://api.industrialmetering.example.com/meter-readings/0",
+            "standard": "https://registry.core.trust.ib1.org/scheme/supply/standard/bank-transaction-data/2024-12-05",
+            "licence": "https://registry.core.trust.ib1.org/scheme/supply/licence/bank-transaction-data/2024-12-05",
+            "service": "https://api.rosemaryaccounts.example.com/meter-readings/0",
             "path": "/readings",
             "parameters": {
                 "from": "2024-08-01Z",
@@ -414,6 +414,13 @@ if __name__ == "__main__":
         }
     )
 
+    sustainability_accounting_platform_receipt2_id = sustainability_accounting_platform_record.add_step(
+        {
+            "type": "receipt",
+            "transfer": accountants_transfer_step_id
+        }
+    )
+
     sustainability_accounting_platform_permission_id = sustainability_accounting_platform_record.add_step(
         {
             "type": "permission",
@@ -438,7 +445,7 @@ if __name__ == "__main__":
             "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
             "inputs": [
                 sustainability_accounting_platform_receipt_id,
-                accountants_transfer_step_id
+                sustainability_accounting_platform_receipt2_id
             ],
             "process": "https://registry.core.trust.ib1.org/scheme/supply/process/sustainability-report/2024-12-05",
             "permissions": [sustainability_accounting_platform_permission_id],
