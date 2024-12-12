@@ -8,7 +8,6 @@ number = 6
   ['293482', 'Nitrogen Fertiliser Products', 'supplier'],
   ['927625', 'Agricultural Wholesale Supplies', 'distributor'],
   ['143252', 'Precise Farm Automation Co', 'farm-management-provider'],
-  ['725245', 'High Street Bank', 'financial-service-provider'],
   ['394722', 'Rosemary Accountancy Software', 'accounts-platform-provider'],
   ['183426', 'Sustainable Farm Systems', 'environmental-reporting-provider'],
   ['582373', 'Green Bank of London', 'financial-service-provider']

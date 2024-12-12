@@ -1,4 +1,3 @@
-
 [roles6]
 subjectAltName = URI:https://directory.core.trust.ib1.org/member/237256
 1.3.6.1.4.1.62329.1.1=ASN1:SEQUENCE:role_values6
@@ -40,41 +39,31 @@ value.1=UTF8:https://registry.core.trust.ib1.org/scheme/supply/role/farm-managem
 # ---------------------------------------------------------------------------
 
 [roles10]
-subjectAltName = URI:https://directory.core.trust.ib1.org/member/725245
-1.3.6.1.4.1.62329.1.1=ASN1:SEQUENCE:role_values10
-1.3.6.1.4.1.62329.1.2=ASN1:UTF8:https://directory.core.trust.ib1.org/scheme/supply/application/5076715
-
-[role_values10]
-value.1=UTF8:https://registry.core.trust.ib1.org/scheme/supply/role/financial-service-provider
-
-# ---------------------------------------------------------------------------
-
-[roles11]
 subjectAltName = URI:https://directory.core.trust.ib1.org/member/394722
-1.3.6.1.4.1.62329.1.1=ASN1:SEQUENCE:role_values11
+1.3.6.1.4.1.62329.1.1=ASN1:SEQUENCE:role_values10
 1.3.6.1.4.1.62329.1.2=ASN1:UTF8:https://directory.core.trust.ib1.org/scheme/supply/application/2763054
 
-[role_values11]
+[role_values10]
 value.1=UTF8:https://registry.core.trust.ib1.org/scheme/supply/role/accounts-platform-provider
 
 # ---------------------------------------------------------------------------
 
-[roles12]
+[roles11]
 subjectAltName = URI:https://directory.core.trust.ib1.org/member/183426
-1.3.6.1.4.1.62329.1.1=ASN1:SEQUENCE:role_values12
+1.3.6.1.4.1.62329.1.1=ASN1:SEQUENCE:role_values11
 1.3.6.1.4.1.62329.1.2=ASN1:UTF8:https://directory.core.trust.ib1.org/scheme/supply/application/1283982
 
-[role_values12]
+[role_values11]
 value.1=UTF8:https://registry.core.trust.ib1.org/scheme/supply/role/environmental-reporting-provider
 
 # ---------------------------------------------------------------------------
 
-[roles13]
+[roles12]
 subjectAltName = URI:https://directory.core.trust.ib1.org/member/582373
-1.3.6.1.4.1.62329.1.1=ASN1:SEQUENCE:role_values13
+1.3.6.1.4.1.62329.1.1=ASN1:SEQUENCE:role_values12
 1.3.6.1.4.1.62329.1.2=ASN1:UTF8:https://directory.core.trust.ib1.org/scheme/supply/application/4076611
 
-[role_values13]
+[role_values12]
 value.1=UTF8:https://registry.core.trust.ib1.org/scheme/supply/role/financial-service-provider
 
 # ---------------------------------------------------------------------------

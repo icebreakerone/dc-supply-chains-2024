@@ -27,10 +27,9 @@ if __name__ == "__main__":
         "7-nitrogen-fertiliser-products",
         "8-agricultural-wholesale-supplies",
         "9-precise-farm-automation-co",
-        "10-high-street-bank",
-        "11-rosemary-accountancy-software",
-        "12-sustainable-farm-systems",
-        "13-green-bank-of-london"
+        "10-rosemary-accountancy-software",
+        "11-sustainable-farm-systems",
+        "12-green-bank-of-london"
     ]
     for n in signer_file_list:
         signers[n] = SignerFiles(
@@ -350,7 +349,7 @@ if __name__ == "__main__":
         }
     )
 
-    sustainability_accounting_platform_record_signed = sustainability_accounting_platform_record.sign(signers["12-sustainable-farm-systems"])
+    sustainability_accounting_platform_record_signed = sustainability_accounting_platform_record.sign(signers["11-sustainable-farm-systems"])
 
     # ===== Final record after all the the steps have been added
     final_record = sustainability_accounting_platform_record_signed

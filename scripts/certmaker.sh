@@ -62,35 +62,26 @@ openssl x509 -req -in 9-precise-farm-automation-co-csr.pem -out 9-precise-farm-a
     -CA 5-signing-issuer-ca.pem -CAkey 5-signing-issuer-key.pem -days 365
 cat 9-precise-farm-automation-co-cert.pem 5-signing-issuer-ca.pem > 9-precise-farm-automation-co-cert-bundle.pem
 
-# 10. High Street Bank (role: financial-service-provider)
-openssl genpkey -algorithm EC -pkeyopt ec_paramgen_curve:P-256 -out 10-high-street-bank-key.pem
-openssl req -new -key 10-high-street-bank-key.pem -out 10-high-street-bank-csr.pem \
-    -subj "/C=GB/ST=London/O=High Street Bank/CN=https:\/\/directory.core.trust.ib1.org\/member\/725245"
-openssl x509 -req -in 10-high-street-bank-csr.pem -out 10-high-street-bank-cert.pem -extfile ../scripts/roles.cnf -extensions roles10 \
-    -CA 5-signing-issuer-ca.pem -CAkey 5-signing-issuer-key.pem -days 365
-cat 10-high-street-bank-cert.pem 5-signing-issuer-ca.pem > 10-high-street-bank-cert-bundle.pem
-
-# 11. Rosemary Accountancy Software (role: accounts-platform-provider)
-openssl genpkey -algorithm EC -pkeyopt ec_paramgen_curve:P-256 -out 11-rosemary-accountancy-software-key.pem
-openssl req -new -key 11-rosemary-accountancy-software-key.pem -out 11-rosemary-accountancy-software-csr.pem \
+# 10. Rosemary Accountancy Software (role: accounts-platform-provider)
+openssl genpkey -algorithm EC -pkeyopt ec_paramgen_curve:P-256 -out 10-rosemary-accountancy-software-key.pem
+openssl req -new -key 10-rosemary-accountancy-software-key.pem -out 10-rosemary-accountancy-software-csr.pem \
     -subj "/C=GB/ST=London/O=Rosemary Accountancy Software/CN=https:\/\/directory.core.trust.ib1.org\/member\/394722"
-openssl x509 -req -in 11-rosemary-accountancy-software-csr.pem -out 11-rosemary-accountancy-software-cert.pem -extfile ../scripts/roles.cnf -extensions roles11 \
+openssl x509 -req -in 10-rosemary-accountancy-software-csr.pem -out 10-rosemary-accountancy-software-cert.pem -extfile ../scripts/roles.cnf -extensions roles10 \
     -CA 5-signing-issuer-ca.pem -CAkey 5-signing-issuer-key.pem -days 365
-cat 11-rosemary-accountancy-software-cert.pem 5-signing-issuer-ca.pem > 11-rosemary-accountancy-software-cert-bundle.pem
+cat 10-rosemary-accountancy-software-cert.pem 5-signing-issuer-ca.pem > 10-rosemary-accountancy-software-cert-bundle.pem
 
-# 12. Sustainable Farm Systems (role: environmental-reporting-provider)
-openssl genpkey -algorithm EC -pkeyopt ec_paramgen_curve:P-256 -out 12-sustainable-farm-systems-key.pem
-openssl req -new -key 12-sustainable-farm-systems-key.pem -out 12-sustainable-farm-systems-csr.pem \
+# 11. Sustainable Farm Systems (role: environmental-reporting-provider)
+openssl genpkey -algorithm EC -pkeyopt ec_paramgen_curve:P-256 -out 11-sustainable-farm-systems-key.pem
+openssl req -new -key 11-sustainable-farm-systems-key.pem -out 11-sustainable-farm-systems-csr.pem \
     -subj "/C=GB/ST=London/O=Sustainable Farm Systems/CN=https:\/\/directory.core.trust.ib1.org\/member\/183426"
-openssl x509 -req -in 12-sustainable-farm-systems-csr.pem -out 12-sustainable-farm-systems-cert.pem -extfile ../scripts/roles.cnf -extensions roles12 \
+openssl x509 -req -in 11-sustainable-farm-systems-csr.pem -out 11-sustainable-farm-systems-cert.pem -extfile ../scripts/roles.cnf -extensions roles11 \
     -CA 5-signing-issuer-ca.pem -CAkey 5-signing-issuer-key.pem -days 365
-cat 12-sustainable-farm-systems-cert.pem 5-signing-issuer-ca.pem > 12-sustainable-farm-systems-cert-bundle.pem
+cat 11-sustainable-farm-systems-cert.pem 5-signing-issuer-ca.pem > 11-sustainable-farm-systems-cert-bundle.pem
 
-# 13. Green Bank of London (role: financial-service-provider)
-openssl genpkey -algorithm EC -pkeyopt ec_paramgen_curve:P-256 -out 13-green-bank-of-london-key.pem
-openssl req -new -key 13-green-bank-of-london-key.pem -out 13-green-bank-of-london-csr.pem \
+# 12. Green Bank of London (role: financial-service-provider)
+openssl genpkey -algorithm EC -pkeyopt ec_paramgen_curve:P-256 -out 12-green-bank-of-london-key.pem
+openssl req -new -key 12-green-bank-of-london-key.pem -out 12-green-bank-of-london-csr.pem \
     -subj "/C=GB/ST=London/O=Green Bank of London/CN=https:\/\/directory.core.trust.ib1.org\/member\/582373"
-openssl x509 -req -in 13-green-bank-of-london-csr.pem -out 13-green-bank-of-london-cert.pem -extfile ../scripts/roles.cnf -extensions roles13 \
+openssl x509 -req -in 12-green-bank-of-london-csr.pem -out 12-green-bank-of-london-cert.pem -extfile ../scripts/roles.cnf -extensions roles12 \
     -CA 5-signing-issuer-ca.pem -CAkey 5-signing-issuer-key.pem -days 365
-cat 13-green-bank-of-london-cert.pem 5-signing-issuer-ca.pem > 13-green-bank-of-london-cert-bundle.pem
-
+cat 12-green-bank-of-london-cert.pem 5-signing-issuer-ca.pem > 12-green-bank-of-london-cert-bundle.pem
