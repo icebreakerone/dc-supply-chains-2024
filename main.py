@@ -335,8 +335,6 @@ if __name__ == "__main__":
 
     accountants_record = Record(TRUST_FRAMEWORK_URL)
 
-    accountants_record.verify(certificate_provider)
-
     accountants_permission_id = accountants_record.add_step(
         {
             "type": "permission",
