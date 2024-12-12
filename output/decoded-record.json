@@ -1,0 +1,1189 @@
+[
+  {
+    "id": "vN8Q9X1VcG0vlFurIqxV",
+    "timestamp": "2024-09-20T12:16:11Z",
+    "type": "permission",
+    "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+    "account": "/yl4Y/aV6b80fo5cnmuDDByfuEA=",
+    "allows": {
+      "licences": [
+        "https://registry.core.trust.ib1.org/scheme/supply/licence/metered-supply-data/2024-12-05"
+      ]
+    },
+    "expires": "2025-09-20T12:16:11Z",
+    "_signature": {
+      "signed": {
+        "member": "https://directory.core.trust.ib1.org/member/237256",
+        "name": "Industrial Metering Company",
+        "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1660792",
+        "roles": [
+          "https://registry.core.trust.ib1.org/scheme/supply/role/energy-data-provider"
+        ]
+      },
+      "includedBy": [
+        {
+          "member": "https://directory.core.trust.ib1.org/member/582373",
+          "name": "Green Bank of London",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/4076611",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/financial-service-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/183426",
+          "name": "Sustainable Farm Systems",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1283982",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/environmental-reporting-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/143252",
+          "name": "Precise Farm Automation Co",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1002764",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/farm-management-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/927625",
+          "name": "Agricultural Wholesale Supplies",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/6493375",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/distributor"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/293482",
+          "name": "Nitrogen Fertiliser Products",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/2054374",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/supplier"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "YuD_1TBsF3z_10X0o8sM",
+    "timestamp": "2024-12-12T13:40:46Z",
+    "type": "origin",
+    "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+    "sourceType": "https://registry.core.trust.ib1.org/scheme/supply/source-type/Meter",
+    "origin": "https://industrialmetering.example.com/",
+    "external": false,
+    "supply:scheme": {
+      "meteringPeriod": {
+        "from": "2024-08-01Z",
+        "to": "2024-09-01Z"
+      }
+    },
+    "supply:assurance": {
+      "missingData": "https://registry.core.trust.ib1.org/scheme/supply/assurance/missing-data/Missing",
+      "materialQuantity": "https://registry.core.trust.ib1.org/scheme/supply/assurance/material-quantity/Measured"
+    },
+    "_signature": {
+      "signed": {
+        "member": "https://directory.core.trust.ib1.org/member/237256",
+        "name": "Industrial Metering Company",
+        "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1660792",
+        "roles": [
+          "https://registry.core.trust.ib1.org/scheme/supply/role/energy-data-provider"
+        ]
+      },
+      "includedBy": [
+        {
+          "member": "https://directory.core.trust.ib1.org/member/582373",
+          "name": "Green Bank of London",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/4076611",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/financial-service-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/183426",
+          "name": "Sustainable Farm Systems",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1283982",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/environmental-reporting-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/143252",
+          "name": "Precise Farm Automation Co",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1002764",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/farm-management-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/927625",
+          "name": "Agricultural Wholesale Supplies",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/6493375",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/distributor"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/293482",
+          "name": "Nitrogen Fertiliser Products",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/2054374",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/supplier"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "Skjqpu4XZ_ACjbnS8VOD",
+    "timestamp": "2024-12-12T13:40:46Z",
+    "type": "transfer",
+    "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+    "of": "YuD_1TBsF3z_10X0o8sM",
+    "to": "https://directory.core.trust.ib1.org/member/293482",
+    "standard": "https://registry.core.trust.ib1.org/scheme/supply/standard/metered-supply-data/2024-12-05",
+    "licence": "https://registry.core.trust.ib1.org/scheme/supply/licence/metered-supply-data/2024-12-05",
+    "service": "https://api.industrialmetering.example.com/meter-readings/0",
+    "path": "/readings",
+    "parameters": {
+      "from": "2024-08-01Z",
+      "to": "2024-09-01Z"
+    },
+    "permissions": [
+      "vN8Q9X1VcG0vlFurIqxV"
+    ],
+    "transaction": "C25D0B85-B7C4-4543-B058-7DA57B8D9A24",
+    "_signature": {
+      "signed": {
+        "member": "https://directory.core.trust.ib1.org/member/237256",
+        "name": "Industrial Metering Company",
+        "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1660792",
+        "roles": [
+          "https://registry.core.trust.ib1.org/scheme/supply/role/energy-data-provider"
+        ]
+      },
+      "includedBy": [
+        {
+          "member": "https://directory.core.trust.ib1.org/member/582373",
+          "name": "Green Bank of London",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/4076611",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/financial-service-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/183426",
+          "name": "Sustainable Farm Systems",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1283982",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/environmental-reporting-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/143252",
+          "name": "Precise Farm Automation Co",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1002764",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/farm-management-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/927625",
+          "name": "Agricultural Wholesale Supplies",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/6493375",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/distributor"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/293482",
+          "name": "Nitrogen Fertiliser Products",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/2054374",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/supplier"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "qdcsxXNtOaxsfzcB1HoD",
+    "timestamp": "2024-12-12T13:40:46Z",
+    "type": "receipt",
+    "transfer": "Skjqpu4XZ_ACjbnS8VOD",
+    "_signature": {
+      "signed": {
+        "member": "https://directory.core.trust.ib1.org/member/293482",
+        "name": "Nitrogen Fertiliser Products",
+        "application": "https://directory.core.trust.ib1.org/scheme/supply/application/2054374",
+        "roles": [
+          "https://registry.core.trust.ib1.org/scheme/supply/role/supplier"
+        ]
+      },
+      "includedBy": [
+        {
+          "member": "https://directory.core.trust.ib1.org/member/582373",
+          "name": "Green Bank of London",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/4076611",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/financial-service-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/183426",
+          "name": "Sustainable Farm Systems",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1283982",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/environmental-reporting-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/143252",
+          "name": "Precise Farm Automation Co",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1002764",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/farm-management-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/927625",
+          "name": "Agricultural Wholesale Supplies",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/6493375",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/distributor"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "cpUXbig1z-wlAFobCeBG",
+    "timestamp": "2024-10-21T09:09:10Z",
+    "type": "permission",
+    "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+    "account": "dbd16978-a0a642d9aa2d95318b50e605",
+    "allows": {
+      "licences": [
+        "https://registry.core.trust.ib1.org/scheme/supply/licence/supply-data/2024-12-05"
+      ],
+      "processes": [
+        "https://registry.core.trust.ib1.org/scheme/supply/process/manufacture/2024-12-05"
+      ]
+    },
+    "expires": "2025-10-21T09:09:10Z",
+    "_signature": {
+      "signed": {
+        "member": "https://directory.core.trust.ib1.org/member/293482",
+        "name": "Nitrogen Fertiliser Products",
+        "application": "https://directory.core.trust.ib1.org/scheme/supply/application/2054374",
+        "roles": [
+          "https://registry.core.trust.ib1.org/scheme/supply/role/supplier"
+        ]
+      },
+      "includedBy": [
+        {
+          "member": "https://directory.core.trust.ib1.org/member/582373",
+          "name": "Green Bank of London",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/4076611",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/financial-service-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/183426",
+          "name": "Sustainable Farm Systems",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1283982",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/environmental-reporting-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/143252",
+          "name": "Precise Farm Automation Co",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1002764",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/farm-management-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/927625",
+          "name": "Agricultural Wholesale Supplies",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/6493375",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/distributor"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "qzGBW2UEdE3Sh4sGaESz",
+    "timestamp": "2024-12-12T13:40:46Z",
+    "type": "origin",
+    "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+    "sourceType": "https://registry.core.trust.ib1.org/scheme/supply/source-type/GridCarbonIntensity",
+    "origin": "https://api.carbonintensity.org.uk/",
+    "originLicence": "https://creativecommons.org/licenses/by/4.0/",
+    "external": true,
+    "supply:scheme": {
+      "meteringPeriod": {
+        "from": "2023-09-01Z",
+        "to": "2024-09-01Z"
+      },
+      "postcode": "CF99"
+    },
+    "supply:assurance": {
+      "missingData": "https://registry.core.trust.ib1.org/scheme/supply/assurance/missing-data/Complete"
+    },
+    "_signature": {
+      "signed": {
+        "member": "https://directory.core.trust.ib1.org/member/293482",
+        "name": "Nitrogen Fertiliser Products",
+        "application": "https://directory.core.trust.ib1.org/scheme/supply/application/2054374",
+        "roles": [
+          "https://registry.core.trust.ib1.org/scheme/supply/role/supplier"
+        ]
+      },
+      "includedBy": [
+        {
+          "member": "https://directory.core.trust.ib1.org/member/582373",
+          "name": "Green Bank of London",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/4076611",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/financial-service-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/183426",
+          "name": "Sustainable Farm Systems",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1283982",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/environmental-reporting-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/143252",
+          "name": "Precise Farm Automation Co",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1002764",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/farm-management-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/927625",
+          "name": "Agricultural Wholesale Supplies",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/6493375",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/distributor"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "TxryddBFwDAKPBXPiNo6",
+    "timestamp": "2024-12-12T13:40:46Z",
+    "type": "origin",
+    "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+    "sourceType": "https://registry.core.trust.ib1.org/scheme/supply/source-type/Meter",
+    "origin": "https://nitrofertiliser.example.com/",
+    "external": false,
+    "supply:scheme": {
+      "meteringPeriod": {
+        "from": "2024-08-01Z",
+        "to": "2024-09-01Z"
+      }
+    },
+    "supply:assurance": {
+      "missingData": "https://registry.core.trust.ib1.org/scheme/supply/assurance/missing-data/Complete",
+      "materialQuantity": "https://registry.core.trust.ib1.org/scheme/supply/assurance/material-quantity/Measured"
+    },
+    "_signature": {
+      "signed": {
+        "member": "https://directory.core.trust.ib1.org/member/293482",
+        "name": "Nitrogen Fertiliser Products",
+        "application": "https://directory.core.trust.ib1.org/scheme/supply/application/2054374",
+        "roles": [
+          "https://registry.core.trust.ib1.org/scheme/supply/role/supplier"
+        ]
+      },
+      "includedBy": [
+        {
+          "member": "https://directory.core.trust.ib1.org/member/582373",
+          "name": "Green Bank of London",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/4076611",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/financial-service-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/183426",
+          "name": "Sustainable Farm Systems",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1283982",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/environmental-reporting-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/143252",
+          "name": "Precise Farm Automation Co",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1002764",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/farm-management-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/927625",
+          "name": "Agricultural Wholesale Supplies",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/6493375",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/distributor"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "PeCXMEBRUtVc7yjRDeJW",
+    "timestamp": "2024-12-12T13:40:46Z",
+    "type": "process",
+    "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+    "inputs": [
+      "qdcsxXNtOaxsfzcB1HoD",
+      "qzGBW2UEdE3Sh4sGaESz",
+      "TxryddBFwDAKPBXPiNo6"
+    ],
+    "process": "https://registry.core.trust.ib1.org/scheme/supply/process/manufacture/2024-12-05",
+    "permissions": [
+      "cpUXbig1z-wlAFobCeBG"
+    ],
+    "supply:assurance": {
+      "missingData": "https://registry.core.trust.ib1.org/scheme/supply/assurance/missing-data/Substituted",
+      "audit": "https://registry.core.trust.ib1.org/scheme/supply/audit-standard/FS128983"
+    },
+    "_signature": {
+      "signed": {
+        "member": "https://directory.core.trust.ib1.org/member/293482",
+        "name": "Nitrogen Fertiliser Products",
+        "application": "https://directory.core.trust.ib1.org/scheme/supply/application/2054374",
+        "roles": [
+          "https://registry.core.trust.ib1.org/scheme/supply/role/supplier"
+        ]
+      },
+      "includedBy": [
+        {
+          "member": "https://directory.core.trust.ib1.org/member/582373",
+          "name": "Green Bank of London",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/4076611",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/financial-service-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/183426",
+          "name": "Sustainable Farm Systems",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1283982",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/environmental-reporting-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/143252",
+          "name": "Precise Farm Automation Co",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1002764",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/farm-management-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/927625",
+          "name": "Agricultural Wholesale Supplies",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/6493375",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/distributor"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "Kr1nkjTQgTzLI6VVLju5",
+    "timestamp": "2024-12-12T13:40:46Z",
+    "type": "transfer",
+    "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+    "of": "PeCXMEBRUtVc7yjRDeJW",
+    "to": "https://directory.core.trust.ib1.org/member/927625",
+    "standard": "https://registry.core.trust.ib1.org/scheme/supply/standard/supply-data/2024-12-05",
+    "licence": "https://registry.core.trust.ib1.org/scheme/supply/licence/supply-data/2024-12-05",
+    "service": "https://api.nitrofertiliser.example.com/supply",
+    "path": "/supply",
+    "parameters": {
+      "invoiceNumber": "F2928-282847"
+    },
+    "permissions": [
+      "cpUXbig1z-wlAFobCeBG"
+    ],
+    "transaction": "C5813265-515B-48DC-925F-832FA418F7E2",
+    "_signature": {
+      "signed": {
+        "member": "https://directory.core.trust.ib1.org/member/293482",
+        "name": "Nitrogen Fertiliser Products",
+        "application": "https://directory.core.trust.ib1.org/scheme/supply/application/2054374",
+        "roles": [
+          "https://registry.core.trust.ib1.org/scheme/supply/role/supplier"
+        ]
+      },
+      "includedBy": [
+        {
+          "member": "https://directory.core.trust.ib1.org/member/582373",
+          "name": "Green Bank of London",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/4076611",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/financial-service-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/183426",
+          "name": "Sustainable Farm Systems",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1283982",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/environmental-reporting-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/143252",
+          "name": "Precise Farm Automation Co",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1002764",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/farm-management-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/927625",
+          "name": "Agricultural Wholesale Supplies",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/6493375",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/distributor"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "5yN24zBBSgRAymX00mKz",
+    "timestamp": "2024-12-12T13:40:46Z",
+    "type": "receipt",
+    "transfer": "Kr1nkjTQgTzLI6VVLju5",
+    "_signature": {
+      "signed": {
+        "member": "https://directory.core.trust.ib1.org/member/927625",
+        "name": "Agricultural Wholesale Supplies",
+        "application": "https://directory.core.trust.ib1.org/scheme/supply/application/6493375",
+        "roles": [
+          "https://registry.core.trust.ib1.org/scheme/supply/role/distributor"
+        ]
+      },
+      "includedBy": [
+        {
+          "member": "https://directory.core.trust.ib1.org/member/582373",
+          "name": "Green Bank of London",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/4076611",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/financial-service-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/183426",
+          "name": "Sustainable Farm Systems",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1283982",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/environmental-reporting-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/143252",
+          "name": "Precise Farm Automation Co",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1002764",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/farm-management-provider"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "BrmqERAI9FPhFELA3098",
+    "timestamp": "2024-10-21T09:09:10Z",
+    "type": "permission",
+    "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+    "account": "hofgGwfwyZIhmM",
+    "allows": {
+      "licences": [
+        "https://registry.core.trust.ib1.org/scheme/supply/licence/supply-data/2024-12-05"
+      ]
+    },
+    "expires": "2025-10-21T09:09:10Z",
+    "_signature": {
+      "signed": {
+        "member": "https://directory.core.trust.ib1.org/member/927625",
+        "name": "Agricultural Wholesale Supplies",
+        "application": "https://directory.core.trust.ib1.org/scheme/supply/application/6493375",
+        "roles": [
+          "https://registry.core.trust.ib1.org/scheme/supply/role/distributor"
+        ]
+      },
+      "includedBy": [
+        {
+          "member": "https://directory.core.trust.ib1.org/member/582373",
+          "name": "Green Bank of London",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/4076611",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/financial-service-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/183426",
+          "name": "Sustainable Farm Systems",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1283982",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/environmental-reporting-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/143252",
+          "name": "Precise Farm Automation Co",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1002764",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/farm-management-provider"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "9LwAegVSYnygQOSXbJas",
+    "timestamp": "2024-12-12T13:40:46Z",
+    "type": "transfer",
+    "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+    "of": "5yN24zBBSgRAymX00mKz",
+    "to": "https://directory.core.trust.ib1.org/member/143252",
+    "standard": "https://registry.core.trust.ib1.org/scheme/supply/standard/supply-data/2024-12-05",
+    "licence": "https://registry.core.trust.ib1.org/scheme/supply/licence/supply-data/2024-12-05",
+    "service": "https://api.agwhole.example.com/supplies/v2",
+    "path": "/supply",
+    "parameters": {
+      "invoiceNumber": "876256237"
+    },
+    "supply:assurance": {
+      "tracking": "https://registry.core.trust.ib1.org/scheme/supply/assurance/tracking/SpecificBatch"
+    },
+    "permissions": [
+      "BrmqERAI9FPhFELA3098"
+    ],
+    "transaction": "00FA5C42-DDBB-444C-B1CE-7B45C0DA642F",
+    "_signature": {
+      "signed": {
+        "member": "https://directory.core.trust.ib1.org/member/927625",
+        "name": "Agricultural Wholesale Supplies",
+        "application": "https://directory.core.trust.ib1.org/scheme/supply/application/6493375",
+        "roles": [
+          "https://registry.core.trust.ib1.org/scheme/supply/role/distributor"
+        ]
+      },
+      "includedBy": [
+        {
+          "member": "https://directory.core.trust.ib1.org/member/582373",
+          "name": "Green Bank of London",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/4076611",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/financial-service-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/183426",
+          "name": "Sustainable Farm Systems",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1283982",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/environmental-reporting-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/143252",
+          "name": "Precise Farm Automation Co",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1002764",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/farm-management-provider"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "uS6nqg307XFFHnew6jJI",
+    "timestamp": "2024-12-12T13:40:46Z",
+    "type": "receipt",
+    "transfer": "9LwAegVSYnygQOSXbJas",
+    "_signature": {
+      "signed": {
+        "member": "https://directory.core.trust.ib1.org/member/143252",
+        "name": "Precise Farm Automation Co",
+        "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1002764",
+        "roles": [
+          "https://registry.core.trust.ib1.org/scheme/supply/role/farm-management-provider"
+        ]
+      },
+      "includedBy": [
+        {
+          "member": "https://directory.core.trust.ib1.org/member/582373",
+          "name": "Green Bank of London",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/4076611",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/financial-service-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/183426",
+          "name": "Sustainable Farm Systems",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1283982",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/environmental-reporting-provider"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "JdmKLBTOAGla8sC37LwZ",
+    "timestamp": "2024-10-21T09:09:10Z",
+    "type": "permission",
+    "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+    "account": "AxZNO1PfLe0JUSZqz6sJbdmbV4yAWQ",
+    "allows": {
+      "licences": [
+        "https://registry.core.trust.ib1.org/scheme/supply/licence/supply-data/2024-12-05"
+      ],
+      "processes": [
+        "https://registry.core.trust.ib1.org/scheme/supply/process/farm-management/2024-12-05"
+      ]
+    },
+    "expires": "2025-10-21T09:09:10Z",
+    "_signature": {
+      "signed": {
+        "member": "https://directory.core.trust.ib1.org/member/143252",
+        "name": "Precise Farm Automation Co",
+        "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1002764",
+        "roles": [
+          "https://registry.core.trust.ib1.org/scheme/supply/role/farm-management-provider"
+        ]
+      },
+      "includedBy": [
+        {
+          "member": "https://directory.core.trust.ib1.org/member/582373",
+          "name": "Green Bank of London",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/4076611",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/financial-service-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/183426",
+          "name": "Sustainable Farm Systems",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1283982",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/environmental-reporting-provider"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "_H6rTifzbFdndHO4IB_z",
+    "timestamp": "2024-12-12T13:40:46Z",
+    "type": "process",
+    "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+    "inputs": [
+      "uS6nqg307XFFHnew6jJI"
+    ],
+    "process": "https://registry.core.trust.ib1.org/scheme/supply/process/farm-management/2024-12-05",
+    "permissions": [
+      "JdmKLBTOAGla8sC37LwZ"
+    ],
+    "supply:assurance": {
+      "missingData": "https://registry.core.trust.ib1.org/scheme/supply/assurance/missing-data/Complete",
+      "audit": "https://registry.core.trust.ib1.org/scheme/supply/audit-standard/ABC1000"
+    },
+    "_signature": {
+      "signed": {
+        "member": "https://directory.core.trust.ib1.org/member/143252",
+        "name": "Precise Farm Automation Co",
+        "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1002764",
+        "roles": [
+          "https://registry.core.trust.ib1.org/scheme/supply/role/farm-management-provider"
+        ]
+      },
+      "includedBy": [
+        {
+          "member": "https://directory.core.trust.ib1.org/member/582373",
+          "name": "Green Bank of London",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/4076611",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/financial-service-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/183426",
+          "name": "Sustainable Farm Systems",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1283982",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/environmental-reporting-provider"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "8VjLUZDggQks0MZeieZa",
+    "timestamp": "2024-12-12T13:40:46Z",
+    "type": "transfer",
+    "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+    "of": "_H6rTifzbFdndHO4IB_z",
+    "to": "https://directory.core.trust.ib1.org/member/183426",
+    "standard": "https://registry.core.trust.ib1.org/scheme/supply/standard/supply-data/2024-12-05",
+    "licence": "https://registry.core.trust.ib1.org/scheme/supply/licence/supply-data/2024-12-05",
+    "service": "https://api.sustainablefarmmanagement.example.com/supplies/v2",
+    "path": "/supply",
+    "parameters": {
+      "from": "2024-07-01Z",
+      "to": "2024-08-01Z"
+    },
+    "permissions": [
+      "JdmKLBTOAGla8sC37LwZ"
+    ],
+    "transaction": "izusb6BS88WE6PE2o2WV8xgvNsvICUUuwyAOG",
+    "_signature": {
+      "signed": {
+        "member": "https://directory.core.trust.ib1.org/member/143252",
+        "name": "Precise Farm Automation Co",
+        "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1002764",
+        "roles": [
+          "https://registry.core.trust.ib1.org/scheme/supply/role/farm-management-provider"
+        ]
+      },
+      "includedBy": [
+        {
+          "member": "https://directory.core.trust.ib1.org/member/582373",
+          "name": "Green Bank of London",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/4076611",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/financial-service-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/183426",
+          "name": "Sustainable Farm Systems",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1283982",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/environmental-reporting-provider"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "yBu4LoEdL_-4C7fZzlce",
+    "timestamp": "2024-09-20T12:16:11Z",
+    "type": "permission",
+    "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+    "account": "/yl4Y/aV6b80fo5cnmuDDByfuEA=",
+    "allows": {
+      "licences": [
+        "https://registry.core.trust.ib1.org/scheme/supply/licence/metered-supply-data/2024-12-05"
+      ]
+    },
+    "expires": "2025-09-20T12:16:11Z",
+    "_signature": {
+      "signed": {
+        "member": "https://directory.core.trust.ib1.org/member/394722",
+        "name": "Rosemary Accountancy Software",
+        "application": "https://directory.core.trust.ib1.org/scheme/supply/application/2763054",
+        "roles": [
+          "https://registry.core.trust.ib1.org/scheme/supply/role/accounts-platform-provider"
+        ]
+      },
+      "includedBy": [
+        {
+          "member": "https://directory.core.trust.ib1.org/member/582373",
+          "name": "Green Bank of London",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/4076611",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/financial-service-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/183426",
+          "name": "Sustainable Farm Systems",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1283982",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/environmental-reporting-provider"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "Z9DwVKsH_QegKFOv0m2N",
+    "timestamp": "2024-12-12T13:40:46Z",
+    "type": "origin",
+    "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+    "sourceType": "https://registry.core.trust.ib1.org/scheme/supply/source-type/OpenBanking",
+    "origin": "https://highstreetbank.example.com/",
+    "originLicence": "https://www.openbanking.org.uk/regulatory/",
+    "external": true,
+    "permissions": [
+      "yBu4LoEdL_-4C7fZzlce"
+    ],
+    "supply:scheme": {
+      "period": {
+        "from": "2024-07-01Z",
+        "to": "2024-08-01Z"
+      }
+    },
+    "supply:assurance": {
+      "missingData": "https://registry.core.trust.ib1.org/scheme/supply/assurance/missing-data/Complete"
+    },
+    "_signature": {
+      "signed": {
+        "member": "https://directory.core.trust.ib1.org/member/394722",
+        "name": "Rosemary Accountancy Software",
+        "application": "https://directory.core.trust.ib1.org/scheme/supply/application/2763054",
+        "roles": [
+          "https://registry.core.trust.ib1.org/scheme/supply/role/accounts-platform-provider"
+        ]
+      },
+      "includedBy": [
+        {
+          "member": "https://directory.core.trust.ib1.org/member/582373",
+          "name": "Green Bank of London",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/4076611",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/financial-service-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/183426",
+          "name": "Sustainable Farm Systems",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1283982",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/environmental-reporting-provider"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "hpnYgOS3HwgDgXvp53am",
+    "timestamp": "2024-12-12T13:40:46Z",
+    "type": "transfer",
+    "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+    "of": "Z9DwVKsH_QegKFOv0m2N",
+    "to": "https://directory.core.trust.ib1.org/member/293482",
+    "standard": "https://registry.core.trust.ib1.org/scheme/supply/standard/supply-data/2024-12-05",
+    "licence": "https://registry.core.trust.ib1.org/scheme/supply/licence/supply-data/2024-12-05",
+    "service": "https://api.industrialmetering.example.com/meter-readings/0",
+    "path": "/readings",
+    "parameters": {
+      "from": "2024-08-01Z",
+      "to": "2024-09-01Z"
+    },
+    "permissions": [
+      "yBu4LoEdL_-4C7fZzlce"
+    ],
+    "transaction": "BEA0ED93-D421-4B54-BE7E-6DE532DA1784",
+    "_signature": {
+      "signed": {
+        "member": "https://directory.core.trust.ib1.org/member/394722",
+        "name": "Rosemary Accountancy Software",
+        "application": "https://directory.core.trust.ib1.org/scheme/supply/application/2763054",
+        "roles": [
+          "https://registry.core.trust.ib1.org/scheme/supply/role/accounts-platform-provider"
+        ]
+      },
+      "includedBy": [
+        {
+          "member": "https://directory.core.trust.ib1.org/member/582373",
+          "name": "Green Bank of London",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/4076611",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/financial-service-provider"
+          ]
+        },
+        {
+          "member": "https://directory.core.trust.ib1.org/member/183426",
+          "name": "Sustainable Farm Systems",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1283982",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/environmental-reporting-provider"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "Y4a8JiQpHg5r0QWKlcK_",
+    "timestamp": "2024-12-12T13:40:46Z",
+    "type": "receipt",
+    "transfer": "8VjLUZDggQks0MZeieZa",
+    "_signature": {
+      "signed": {
+        "member": "https://directory.core.trust.ib1.org/member/183426",
+        "name": "Sustainable Farm Systems",
+        "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1283982",
+        "roles": [
+          "https://registry.core.trust.ib1.org/scheme/supply/role/environmental-reporting-provider"
+        ]
+      },
+      "includedBy": [
+        {
+          "member": "https://directory.core.trust.ib1.org/member/582373",
+          "name": "Green Bank of London",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/4076611",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/financial-service-provider"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "V_xSLSUOxpzp4ySfu0bR",
+    "timestamp": "2024-10-21T09:09:10Z",
+    "type": "permission",
+    "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+    "account": "dbd16978-a0a642d9aa2d95318b50e605",
+    "allows": {
+      "licences": [
+        "https://registry.core.trust.ib1.org/scheme/supply/licence/sustainability-report/2024-12-05"
+      ],
+      "processes": [
+        "https://registry.core.trust.ib1.org/scheme/supply/process/sustainability-report/2024-12-05"
+      ]
+    },
+    "expires": "2025-10-21T09:09:10Z",
+    "_signature": {
+      "signed": {
+        "member": "https://directory.core.trust.ib1.org/member/183426",
+        "name": "Sustainable Farm Systems",
+        "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1283982",
+        "roles": [
+          "https://registry.core.trust.ib1.org/scheme/supply/role/environmental-reporting-provider"
+        ]
+      },
+      "includedBy": [
+        {
+          "member": "https://directory.core.trust.ib1.org/member/582373",
+          "name": "Green Bank of London",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/4076611",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/financial-service-provider"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "eXdxD3UtsuSLzsgB4gzC",
+    "timestamp": "2024-12-12T13:40:46Z",
+    "type": "process",
+    "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+    "inputs": [
+      "Y4a8JiQpHg5r0QWKlcK_",
+      "hpnYgOS3HwgDgXvp53am"
+    ],
+    "process": "https://registry.core.trust.ib1.org/scheme/supply/process/sustainability-report/2024-12-05",
+    "permissions": [
+      "V_xSLSUOxpzp4ySfu0bR"
+    ],
+    "supply:assurance": {
+      "missingData": "https://registry.core.trust.ib1.org/scheme/supply/assurance/missing-data/Missing",
+      "correlation": "https://registry.core.trust.ib1.org/scheme/supply/assurance/correlation/MoreThanOneDataSource"
+    },
+    "_signature": {
+      "signed": {
+        "member": "https://directory.core.trust.ib1.org/member/183426",
+        "name": "Sustainable Farm Systems",
+        "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1283982",
+        "roles": [
+          "https://registry.core.trust.ib1.org/scheme/supply/role/environmental-reporting-provider"
+        ]
+      },
+      "includedBy": [
+        {
+          "member": "https://directory.core.trust.ib1.org/member/582373",
+          "name": "Green Bank of London",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/4076611",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/financial-service-provider"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "ILLi0VyCMR8EbG_Ume0c",
+    "timestamp": "2024-12-12T13:40:46Z",
+    "type": "transfer",
+    "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+    "of": "eXdxD3UtsuSLzsgB4gzC",
+    "to": "https://directory.core.trust.ib1.org/member/582373",
+    "standard": "https://registry.core.trust.ib1.org/scheme/supply/standard/sustainability-report/2024-12-05",
+    "licence": "https://registry.core.trust.ib1.org/scheme/supply/licence/sustainability-report/2024-12-05",
+    "service": "https://api.agwhole.example.com/supplies/v2",
+    "path": "/supply",
+    "parameters": {
+      "from": "2024-08-01Z",
+      "to": "2024-09-01Z"
+    },
+    "permissions": [
+      "V_xSLSUOxpzp4ySfu0bR"
+    ],
+    "transaction": "izusb6BS88WE6PE2o2WV8xgvNsvICUUuwyAOG",
+    "_signature": {
+      "signed": {
+        "member": "https://directory.core.trust.ib1.org/member/183426",
+        "name": "Sustainable Farm Systems",
+        "application": "https://directory.core.trust.ib1.org/scheme/supply/application/1283982",
+        "roles": [
+          "https://registry.core.trust.ib1.org/scheme/supply/role/environmental-reporting-provider"
+        ]
+      },
+      "includedBy": [
+        {
+          "member": "https://directory.core.trust.ib1.org/member/582373",
+          "name": "Green Bank of London",
+          "application": "https://directory.core.trust.ib1.org/scheme/supply/application/4076611",
+          "roles": [
+            "https://registry.core.trust.ib1.org/scheme/supply/role/financial-service-provider"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": "YYXILppbZ0p31oifpuF3",
+    "timestamp": "2024-12-12T13:40:46Z",
+    "type": "receipt",
+    "transfer": "ILLi0VyCMR8EbG_Ume0c",
+    "_signature": {
+      "signed": {
+        "member": "https://directory.core.trust.ib1.org/member/582373",
+        "name": "Green Bank of London",
+        "application": "https://directory.core.trust.ib1.org/scheme/supply/application/4076611",
+        "roles": [
+          "https://registry.core.trust.ib1.org/scheme/supply/role/financial-service-provider"
+        ]
+      },
+      "includedBy": []
+    }
+  }
+]
