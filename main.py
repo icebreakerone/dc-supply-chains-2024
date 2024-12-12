@@ -349,10 +349,42 @@ if __name__ == "__main__":
         }
     )
 
+    sustainability_accounting_platform_transfer_id = sustainability_accounting_platform_record.add_step(
+        {
+            "type": "transfer",
+            "scheme": "https://registry.core.trust.ib1.org/scheme/supply",
+            "of": sustainability_accounting_platform_processing_id,
+            "to": "https://directory.core.trust.ib1.org/member/582373",
+            "standard": "https://registry.core.trust.ib1.org/scheme/supply/standard/supply-data/2024-12-05",
+            "licence": "https://registry.core.trust.ib1.org/scheme/supply/licence/supply-data/2024-12-05",
+            "service": "https://api.agwhole.example.com/supplies/v2",
+            "path": "/supply",
+            "parameters": {
+                # TODO
+            },
+            "permissions": [sustainability_accounting_platform_permission_id],
+            "transaction": "izusb6BS88WE6PE2o2WV8xgvNsvICUUuwyAOG"
+        }
+    )
+
     sustainability_accounting_platform_record_signed = sustainability_accounting_platform_record.sign(signers["11-sustainable-farm-systems"])
+    sustainability_accounting_platform_data_attachment = sustainability_accounting_platform_record_signed.encoded()
+
+    # -----------------------------------------------------------------------
+    # ===== Farm management system
+
+    bank_record = Record(TRUST_FRAMEWORK_URL, sustainability_accounting_platform_data_attachment)
+
+    bank_receipt_id = bank_record.add_step(
+        {
+            "type": "receipt",
+            "transfer": sustainability_accounting_platform_transfer_id
+        }
+    )
+    bank_record_signed = bank_record.sign(signers["12-green-bank-of-london"])
 
     # ===== Final record after all the the steps have been added
-    final_record = sustainability_accounting_platform_record_signed
+    final_record = bank_record_signed
 
     # Print records
     print("----- Record (encoded for transfer) -----")
